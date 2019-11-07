@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Projecto Django</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div <style type="text/css" media="screen" style="background: white">
+		
+	</style>
+		<ul>
+		<li><a href="" >inicio</a>
+		</li>
+		<li><a href="/welcome" >welcome</a>
+		</li>
+		<li><a href="/entradas" >entradas</a>
+		</li>
+		<li><a href="/autores" >autores</a>
+		</li>
+	</ul>
+	</div>
+	
+	{% block content %}
+	{% endblock %}
+
+	<footer style="background: green">
+		{% block footer %}
+		{% endblock %}
+	</footer>
+</body>
+</html>

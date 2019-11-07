@@ -1,0 +1,26 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+	<h1>Inicio</h1>
+	<form action="{% url 'autores' %}" method="post">
+		{% csrf_token %}
+		{{ form }}
+		<input type="submit" value="Guardar">
+	</form>
+	<table border="1">
+		<tr>
+		{% for i in range %}
+			{% if i|divisibleby:'20' %}
+			<td>
+				{{i}}
+			</td></tr>
+			{% else %}
+			<td>
+				{{i}}
+			</td>
+			{% endif %}
+			{% endfor %}
+		</tr>
+	</table>
+
+{% endblock %}

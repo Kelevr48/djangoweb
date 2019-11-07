@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<h1>Autores del Blog</h1>
+	<form action="{% url 'autores' %}" method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Guardar">
+	</form>
+	<ul>
+		{% for autor in autores %}
+			<li>{{autor}} <a href="{% url
+				'editarA' autor.id_autor%}">Editar</a>
+				<a href="{%% url 'eliminarA' autor.id_autor}"></a></li> 
+		{% endfor %}
+	</ul>
+{% endblock %}
+{% block footer %}
+	Pie de Pagina Autores
+{% endblock %}
